@@ -1,0 +1,15 @@
+version: '3'
+services:
+    raven:
+      container_name: raven
+      build: .
+      image: raven
+      ports:
+        - 8766:8766
+      volumes:
+        - /root/.raven
+      environment:
+        RPCUSER: $RPCUSER
+        RPCPASSWORD: $RPCPASSWORD
+        RPCALLOWIP: $RPCALLOWIP
+        TESTNET: $TESTNET
